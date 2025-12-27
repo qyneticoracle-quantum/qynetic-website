@@ -10,19 +10,18 @@ body {
 .container {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
-/* Navbar - pienempi ja ei peitä */
+/* Navbar - kaunis ja minimalistinen */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 8, 17, 0.85);
+    background: rgba(0, 8, 17, 0.9);
     backdrop-filter: blur(15px);
     z-index: 1000;
-    padding: 15px 0;
-    transition: background 0.3s;
+    padding: 20px 0;
 }
 
 .nav-container {
@@ -31,34 +30,30 @@ body {
     align-items: center;
 }
 
-.nav-logo svg {
-    width: 50px;
-    height: 50px;
-}
-
-.glow {
-    filter: drop-shadow(0 0 15px #00FFFF);
-}
-
-.glow-text {
-    filter: drop-shadow(0 0 15px #00FFFF);
+.brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    color: #00FFFF;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 .nav-links a {
     color: #B0FFFF;
-    margin-left: 25px;
+    margin-left: 40px;
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: #00FFFF;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
 }
 
-/* Hero - lisätty padding-top navin takia */
+/* Hero - ei logoa, teksti erottuu paremmin */
 .hero {
     min-height: 100vh;
-    padding-top: 120px; /* Navin korkeus + margin */
+    padding-top: 100px;
     position: relative;
     display: flex;
     align-items: center;
@@ -96,24 +91,37 @@ body {
     padding: 0 20px;
 }
 
-.hero-logo {
-    width: 260px;
-    height: auto;
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    background: linear-gradient(90deg, #00FFFF, #00E8C6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 48px;
+    color: #00FFFF;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
     margin-bottom: 40px;
-    animation: float 8s ease-in-out infinite;
 }
 
 .hero-desc {
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.6;
     margin-bottom: 60px;
+    color: #B0FFFF;
 }
 
-/* Mobile improvements */
+.cta {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Mobile fixes */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 10px 0;
-    }
     .nav-links {
         display: flex;
         flex-wrap: wrap;
@@ -122,22 +130,19 @@ body {
     }
     .nav-links a {
         margin: 0;
-        font-size: 14px;
+        font-size: 16px;
     }
     .hero {
-        padding-top: 100px;
-    }
-    .hero-logo {
-        width: 200px;
+        padding-top: 120px;
     }
     h1 {
-        font-size: 48px;
+        font-size: 56px;
     }
     h2 {
-        font-size: 32px;
+        font-size: 36px;
     }
     .hero-desc {
-        font-size: 18px;
+        font-size: 20px;
     }
     .cta {
         flex-direction: column;
@@ -148,4 +153,4 @@ body {
     }
 }
 
-/* Muut tyylit sama kuin edellisessä v3:ssa (glow, cards, etc.) – kopioi loput edellisestä */
+/* Loput tyylit (cards, sections jne.) sama kuin edellisessä v3:ssa */
