@@ -1,0 +1,293 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000811;
+    color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 8, 17, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 30px 0;
+    transition: all 0.3s;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    color: #00FFFF;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    letter-spacing: 3px;
+}
+
+.nav-links a {
+    color: #B0FFFF;
+    margin-left: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00FFFF;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    padding-top: 140px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.quantum-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 80px 80px;
+    animation: grid-move 60s linear infinite;
+}
+
+@keyframes grid-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 80px 80px; }
+}
+
+.particle-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 70%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(0, 232, 198, 0.15) 0%, transparent 50%);
+    animation: particles 80s linear infinite alternate;
+}
+
+@keyframes particles {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(100px, -100px) rotate(10deg); }
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 90px;
+    background: linear-gradient(90deg, #00FFFF, #00E8C6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-size: 52px;
+    color: #00FFFF;
+    text-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+    margin-bottom: 40px;
+}
+
+.hero-desc {
+    font-size: 26px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #B0FFFF;
+}
+
+.hero-sub {
+    font-size: 22px;
+    color: #00E8C6;
+    margin-bottom: 70px;
+}
+
+.cta {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 20px 50px;
+    border-radius: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #00FFFF, #00E8C6);
+    color: #000;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 70px rgba(0, 255, 255, 0.9);
+    transform: scale(1.08);
+}
+
+.btn-secondary {
+    border: 3px solid #00FFFF;
+    color: #00FFFF;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+}
+
+/* Sections */
+.section {
+    padding: 180px 0;
+    position: relative;
+}
+
+.alt {
+    background: linear-gradient(to bottom, #000811, #001122);
+}
+
+.section-desc {
+    text-align: center;
+    font-size: 22px;
+    color: #B0FFFF;
+    max-width: 900px;
+    margin: 0 auto 100px;
+}
+
+/* Cards */
+.cards, .tech-grid, .team-grid, .timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 60px;
+}
+
+.card, .tech-card, .team-card, .tl-item {
+    background: rgba(0, 255, 255, 0.04);
+    padding: 70px 50px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    text-align: center;
+    transition: all 0.6s ease;
+}
+
+.card:hover, .tech-card:hover, .team-card:hover, .tl-item:hover {
+    border-color: #00FFFF;
+    box-shadow: 0 0 80px rgba(0, 255, 255, 0.5);
+    transform: translateY(-20px);
+}
+
+.card h3, .tech-card h3 {
+    color: #00E8C6;
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+.card p, .tech-card p {
+    font-size: 18px;
+    color: #B0FFFF;
+}
+
+.card-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(45deg, #00FFFF, #00E8C6);
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+}
+
+.tl-date {
+    font-size: 20px;
+    color: #00FFFF;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Footer */
+footer {
+    padding: 140px 0;
+    text-align: center;
+    background: #000;
+}
+
+.footer-title {
+    font-size: 28px;
+    color: #B0FFFF;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.footer-links a {
+    color: #00FFFF;
+    margin: 0 30px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-shadow: 0 0 20px #00FFFF;
+}
+
+.small {
+    margin-top: 60px;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+    .nav-links a { margin-left: 25px; font-size: 16px; }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 20px 0; }
+    .nav-container { flex-direction: column; gap: 20px; }
+    .nav-links { flex-wrap: wrap; gap: 15px; justify-content: center; }
+    .hero { padding-top: 160px; }
+    h1 { font-size: 60px; }
+    h2 { font-size: 40px; }
+    .hero-desc, .section-desc { font-size: 20px; }
+    .cta { flex-direction: column; gap: 25px; }
+    .cards, .tech-grid, .team-grid, .timeline { grid-template-columns: 1fr; gap: 40px; }
+    .card, .tech-card, .team-card { padding: 50px 30px; }
+}
