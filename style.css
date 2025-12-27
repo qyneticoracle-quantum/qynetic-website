@@ -1,0 +1,67 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000811;
+    color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Navbar - matalampi, läpinäkyvämpi, ei peitä heroa */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 8, 17, 0.7); /* Enemmän läpinäkyvä */
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    padding: 20px 0; /* Matalampi */
+    transition: all 0.3s;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #00FFFF;
+    text-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    color: #B0FFFF;
+    margin-left: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00FFFF;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Hero - enemmän paddingia, otsikko näkyy kokonaan */
+.hero {
+    min-height: 100vh;
+    padding-top: 180px; /* Enemmän tilaa naville */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Loput tyylit sama kuin v6:ssa (grid, particles, cards, etc.) – ei muutoksia */
