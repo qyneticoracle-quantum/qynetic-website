@@ -1,0 +1,228 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000811;
+    color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 8, 17, 0.8);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 30px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qyn-logo .glow {
+    animation: pulse 4s infinite;
+}
+
+.glow-text {
+    filter: drop-shadow(0 0 20px #00FFFF);
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.quantum-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.particle-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 232, 198, 0.1) 0%, transparent 50%);
+    animation: particles 30s linear infinite alternate;
+}
+
+@keyframes particles {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, -100px) scale(1.2); }
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero-logo-svg {
+    margin-bottom: 40px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    background: linear-gradient(90deg, #00FFFF, #00E8C6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 44px;
+    color: #00FFFF;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    margin-bottom: 60px;
+}
+
+.hero p {
+    font-size: 24px;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: #B0FFFF;
+}
+
+.cta {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #00FFFF, #00E8C6);
+    color: #000;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    border: 2px solid #00FFFF;
+    color: #00FFFF;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 255, 255, 0.1);
+}
+
+/* Sections */
+.section {
+    padding: 150px 0;
+    position: relative;
+}
+
+.alt {
+    background: linear-gradient(to bottom, #000811, #001122);
+}
+
+/* Cards */
+.cards, .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card, .tech-card, .team-card {
+    background: rgba(0, 255, 255, 0.03);
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card:hover, .tech-card:hover, .team-card:hover {
+    border-color: #00FFFF;
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.4);
+    transform: translateY(-20px);
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #00FFFF, #00E8C6);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+}
+
+/* Timeline */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.tl-item {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    padding: 100px 0;
+    text-align: center;
+    background: #000;
+    color: #00FFFF;
+}
+
+### Push-ohjeet (sama repo tai uusi)
+```bash
+git add .
+git commit -m "Futuristic redesign - pure CSS/SVG, no external assets"
+git push origin main --force   # --force korvaa kaiken uudella (turvallista)
