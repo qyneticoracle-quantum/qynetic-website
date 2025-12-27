@@ -18,10 +18,11 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 8, 17, 0.9);
-    backdrop-filter: blur(15px);
+    background: rgba(0, 8, 17, 0.95);
+    backdrop-filter: blur(20px);
     z-index: 1000;
-    padding: 20px 0;
+    padding: 25px 0;
+    transition: all 0.3s;
 }
 
 .nav-container {
@@ -32,9 +33,10 @@ body {
 
 .brand {
     font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
+    font-size: 32px;
     color: #00FFFF;
     text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    letter-spacing: 2px;
 }
 
 .nav-links a {
@@ -42,18 +44,19 @@ body {
     margin-left: 40px;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
+    font-size: 18px;
+    transition: all 0.3s;
 }
 
 .nav-links a:hover {
     color: #00FFFF;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
 }
 
-/* Hero - ei logoa, teksti erottuu paremmin */
+/* Hero - puhdas ja voimakas */
 .hero {
     min-height: 100vh;
-    padding-top: 100px;
+    padding-top: 120px; /* Tilaa naville */
     position: relative;
     display: flex;
     align-items: center;
@@ -74,6 +77,11 @@ body {
     animation: grid-move 40s linear infinite;
 }
 
+@keyframes grid-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 60px 60px; }
+}
+
 .particle-field {
     position: absolute;
     top: 0;
@@ -83,6 +91,11 @@ body {
     background: radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.12) 0%, transparent 40%),
                 radial-gradient(circle at 80% 20%, rgba(0, 232, 198, 0.12) 0%, transparent 40%);
     animation: particles 50s linear infinite alternate;
+}
+
+@keyframes particles {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(80px, -80px); }
 }
 
 .hero-content {
@@ -98,6 +111,7 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
+    letter-spacing: 3px;
 }
 
 h2 {
@@ -120,20 +134,133 @@ h2 {
     justify-content: center;
 }
 
-/* Mobile fixes */
+.btn-primary, .btn-secondary {
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #00FFFF, #00E8C6);
+    color: #000;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    border: 2px solid #00FFFF;
+    color: #00FFFF;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+}
+
+/* Sections */
+.section {
+    padding: 160px 0;
+    position: relative;
+}
+
+.alt {
+    background: linear-gradient(to bottom, #000811, #001122);
+}
+
+.section-desc {
+    text-align: center;
+    font-size: 20px;
+    color: #B0FFFF;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+/* Cards & Grids */
+.cards, .tech-grid, .team-grid, .timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+}
+
+.card, .tech-card, .team-card, .tl-item {
+    background: rgba(0, 255, 255, 0.04);
+    padding: 60px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.card:hover, .tech-card:hover, .team-card:hover, .tl-item:hover {
+    border-color: #00FFFF;
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.4);
+    transform: translateY(-15px);
+}
+
+.card h3 {
+    color: #00E8C6;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(45deg, #00FFFF, #00E8C6);
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+}
+
+/* Footer */
+footer {
+    padding: 120px 0;
+    text-align: center;
+    background: #000;
+    color: #00FFFF;
+    font-size: 18px;
+}
+
+footer p:last-child {
+    margin-top: 20px;
+    color: #B0FFFF;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+    .nav-links a {
+        margin-left: 25px;
+        font-size: 16px;
+    }
+}
+
 @media (max-width: 768px) {
+    .navbar {
+        padding: 15px 0;
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 20px;
+    }
     .nav-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 15px;
         justify-content: center;
+        gap: 20px;
     }
     .nav-links a {
         margin: 0;
         font-size: 16px;
     }
     .hero {
-        padding-top: 120px;
+        padding-top: 140px;
     }
     h1 {
         font-size: 56px;
@@ -152,5 +279,3 @@ h2 {
         grid-template-columns: 1fr;
     }
 }
-
-/* Loput tyylit (cards, sections jne.) sama kuin edellisessä v3:ssa */
