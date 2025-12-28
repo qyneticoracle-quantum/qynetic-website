@@ -17,7 +17,7 @@
             position: relative;
         }
 
-        /* Hieno abstrakti taustagrafiikka */
+        /* Hieno abstrakti tausta */
         body::before {
             content: '';
             position: absolute;
@@ -42,7 +42,7 @@
             pointer-events: none;
             opacity: 0.4;
             z-index: -1;
-            animation: float 20s infinite linear;
+            animation: float 30s infinite linear;
         }
         @keyframes float {
             0% { transform: translateY(0) translateX(0); }
@@ -53,8 +53,6 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 40px;
-            position: relative;
-            z-index: 1;
         }
 
         /* Navbar */
@@ -97,6 +95,7 @@
             font-size: 28px;
             color: #BCCCDC;
             cursor: pointer;
+            padding: 10px;
         }
         .mobile-nav {
             display: none;
@@ -107,7 +106,7 @@
             background: rgba(11, 16, 38, 0.95);
             backdrop-filter: blur(20px);
             flex-direction: column;
-            padding: 20px;
+            padding: 20px 40px;
             gap: 20px;
             z-index: 999;
         }
@@ -115,7 +114,8 @@
             color: #BCCCDC;
             font-size: 20px;
             text-decoration: none;
-            padding: 10px 0;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
         }
 
         /* Hero */
@@ -556,6 +556,9 @@
                 left: 0 !important;
             }
             .roadmap-item::before { left: 32px; }
+            .contact-grid {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 480px) {
@@ -563,6 +566,7 @@
             #hero h1 { font-size: 40px; }
             .section-title { font-size: 32px; }
             p { font-size: 18px; }
+            .mobile-menu { padding: 15px; }
         }
     </style>
 </head>
