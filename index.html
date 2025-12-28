@@ -28,8 +28,8 @@
             left: 0;
             right: 0;
             height: 80px;
-            background: rgba(11, 16, 38, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(11, 16, 38, 0.9);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(74, 144, 226, 0.1);
             z-index: 1000;
             display: flex;
@@ -38,13 +38,13 @@
             padding: 0 80px;
         }
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             color: #4A90E2;
         }
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 48px;
         }
         .nav-links a {
             color: #BCCCDC;
@@ -83,16 +83,21 @@
             color: #4A90E2;
             margin-bottom: 24px;
         }
+        #hero .subtitle {
+            font-size: 28px;
+            color: #BCCCDC;
+            margin-bottom: 40px;
+        }
         #hero p {
-            font-size: 24px;
-            max-width: 800px;
-            margin: 0 auto 48px;
+            font-size: 20px;
+            max-width: 900px;
+            margin: 0 auto 60px;
             color: #BCCCDC;
         }
         .btn {
             display: inline-block;
-            padding: 14px 32px;
-            margin: 0 12px;
+            padding: 16px 36px;
+            margin: 0 16px;
             background: transparent;
             border: 1px solid #4A90E2;
             color: #4A90E2;
@@ -116,16 +121,16 @@
 
         /* Sections */
         section {
-            padding: 140px 0;
+            padding: 160px 0;
         }
-        h2.section-title {
+        .section-title {
             font-size: 48px;
             color: #4A90E2;
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 32px;
             font-weight: 700;
         }
-        .subtitle {
+        .section-subtitle {
             font-size: 24px;
             color: #BCCCDC;
             text-align: center;
@@ -139,14 +144,13 @@
             justify-content: center;
             gap: 80px;
             flex-wrap: wrap;
-            margin-bottom: 100px;
         }
         .stat-item {
             text-align: center;
-            min-width: 300px;
+            min-width: 280px;
         }
         .stat-value {
-            font-size: 36px;
+            font-size: 40px;
             color: #4A90E2;
             font-weight: 700;
             margin-bottom: 16px;
@@ -157,7 +161,7 @@
         }
 
         /* Bottlenecks */
-        .bottlenecks {
+        .bottlenecks-grid {
             display: flex;
             justify-content: center;
             gap: 60px;
@@ -165,21 +169,21 @@
         }
         .bottleneck-card {
             background: rgba(74, 144, 226, 0.05);
-            border: 1px solid rgba(74, 144, 226, 0.1);
+            border: 1px solid rgba(74, 144, 226, 0.2);
             border-radius: 16px;
             padding: 40px;
-            width: 360px;
+            width: 380px;
             text-align: center;
         }
         .bottleneck-card i {
-            font-size: 48px;
+            font-size: 56px;
             color: #4A90E2;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
         .bottleneck-card h3 {
-            font-size: 24px;
+            font-size: 28px;
             color: #F0F4F8;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         /* Quantum Era */
@@ -193,13 +197,17 @@
             flex: 1;
             min-width: 400px;
         }
+        .quantum-column h3 {
+            font-size: 28px;
+            color: #4A90E2;
+            margin-bottom: 32px;
+        }
         .quantum-column ul {
             font-size: 20px;
-            padding-left: 24px;
-            margin: 32px 0;
+            padding-left: 28px;
         }
         .quantum-column li {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         /* Mission Values */
@@ -211,7 +219,7 @@
         }
         .value-card {
             text-align: center;
-            max-width: 360px;
+            max-width: 380px;
         }
         .value-card i {
             font-size: 56px;
@@ -225,10 +233,10 @@
         }
 
         /* Finland */
-        .finland-content {
+        .finland-grid {
             display: flex;
             gap: 100px;
-            align-items: center;
+            align-items: start;
             flex-wrap: wrap;
         }
         .finland-text {
@@ -237,11 +245,23 @@
         }
         .finland-text ul {
             font-size: 20px;
-            padding-left: 24px;
+            padding-left: 28px;
             margin: 40px 0;
         }
         .finland-text li {
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+        }
+        .finland-text li strong {
+            color: #4A90E2;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+        .finland-info {
+            background: rgba(74, 144, 226, 0.1);
+            border-left: 4px solid #4A90E2;
+            padding: 32px;
+            margin-top: 40px;
         }
         .finland-image {
             flex: 1;
@@ -253,10 +273,200 @@
             border: 1px solid rgba(188, 204, 220, 0.2);
         }
 
+        /* Product Evolution */
+        .evolution-grid {
+            display: flex;
+            gap: 100px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .evolution-text {
+            flex: 1;
+            min-width: 400px;
+        }
+        .evolution-text p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            padding-left: 40px;
+            border-left: 4px solid #4A90E2;
+        }
+        .evolution-text strong {
+            color: #4A90E2;
+            font-size: 24px;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .evolution-image {
+            flex: 1;
+            min-width: 400px;
+        }
+        .evolution-image img {
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        /* Tech Stack Table */
+        .tech-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 60px auto;
+            border-collapse: collapse;
+        }
+        .tech-table th, .tech-table td {
+            padding: 24px;
+            text-align: left;
+            border-bottom: 1px solid rgba(188, 204, 220, 0.1);
+        }
+        .tech-table th {
+            font-size: 24px;
+            color: #4A90E2;
+            border-bottom: 2px solid rgba(74, 144, 226, 0.3);
+        }
+        .tech-table td:first-child {
+            font-weight: 700;
+            color: #BCCCDC;
+        }
+
+        /* Token */
+        .token-grid {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .token-card {
+            text-align: center;
+            max-width: 380px;
+        }
+        .token-card i {
+            font-size: 56px;
+            color: #4A90E2;
+            margin-bottom: 32px;
+        }
+        .token-card h3 {
+            font-size: 28px;
+            color: #F0F4F8;
+            margin-bottom: 20px;
+        }
+
+        /* Roadmap */
+        .roadmap {
+            max-width: 800px;
+            margin: 80px auto;
+            position: relative;
+        }
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: rgba(74, 144, 226, 0.3);
+            top: 0;
+            bottom: 0;
+            left: 80px;
+        }
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 60px;
+            padding-left: 140px;
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #4A90E2;
+            border-radius: 50%;
+            left: 72px;
+            top: 8px;
+            z-index: 1;
+        }
+        .roadmap-date {
+            font-size: 28px;
+            color: #4A90E2;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .roadmap-title {
+            font-size: 24px;
+            color: #BCCCDC;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        /* Realism */
+        .realism-grid {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .realism-card {
+            text-align: center;
+            max-width: 380px;
+        }
+        .realism-card i {
+            font-size: 56px;
+            color: #4A90E2;
+            margin-bottom: 32px;
+        }
+        .realism-card h3 {
+            font-size: 28px;
+            color: #F0F4F8;
+            margin-bottom: 20px;
+        }
+
+        /* Contact */
+        #contact {
+            background: rgba(74, 144, 226, 0.05);
+        }
+        .contact-grid {
+            display: flex;
+            gap: 100px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .contact-text {
+            flex: 1;
+            min-width: 400px;
+        }
+        .contact-form {
+            flex: 1;
+            min-width: 400px;
+            background: rgba(11, 16, 38, 0.6);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.2);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            border-radius: 8px;
+            color: #F0F4F8;
+            font-size: 18px;
+        }
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 16px;
+            background: #4A90E2;
+            color: #0B1026;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
         /* Footer */
         footer {
             text-align: center;
-            padding: 100px 80px;
+            padding: 80px;
             font-size: 18px;
             color: #BCCCDC;
             border-top: 1px solid rgba(188, 204, 220, 0.3);
@@ -280,11 +490,8 @@
     <section id="hero">
         <div class="container">
             <h1>Quantum-Augmented<br>Financial Infrastructure</h1>
-            <p>Building the neutral infrastructure for the quantum era</p>
-            <p style="font-size:20px; max-width:900px; margin:0 auto 60px;">
-                Qynetic Labs Oy transforms quantum advantage into measurable value for global finance. 
-                From Helsinki, we deliver boring, reliable infrastructure that serious players will use and pay for.
-            </p>
+            <p class="subtitle">Building the neutral infrastructure for the quantum era</p>
+            <p>Qynetic Labs Oy transforms quantum advantage into measurable value for global finance. From Helsinki, we deliver boring, reliable infrastructure that serious players will use and pay for.</p>
             <div>
                 <a href="#mission" class="btn btn-primary">Learn More →</a>
                 <a href="#roadmap" class="btn">View Roadmap</a>
@@ -294,9 +501,9 @@
 
     <!-- Market -->
     <section>
-        <div class="container text-center">
+        <div class="container">
             <h2 class="section-title">Global Finance Reaches $3 Trillion</h2>
-            <p class="subtitle">Cryptocurrency and blockchain are now core components of the global financial system.</p>
+            <p class="section-subtitle">Cryptocurrency and blockchain are now core components of the global financial system.</p>
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-value">$3.0–3.1T</div>
@@ -316,10 +523,10 @@
 
     <!-- Bottlenecks -->
     <section id="challenges">
-        <div class="container text-center">
+        <div class="container">
             <h2 class="section-title">Three Critical Bottlenecks</h2>
-            <p class="subtitle">Current infrastructure faces scalability, security, and efficiency limits.</p>
-            <div class="bottlenecks">
+            <p class="section-subtitle">Current infrastructure faces scalability, security, and efficiency limits.</p>
+            <div class="bottlenecks-grid">
                 <div class="bottleneck-card">
                     <i class="fas fa-bolt"></i>
                     <h3>Optimization Limits</h3>
@@ -341,9 +548,9 @@
 
     <!-- Quantum Era -->
     <section>
-        <div class="container text-center">
+        <div class="container">
             <h2 class="section-title">The Quantum Era Transitions from Theory to Experimentation</h2>
-            <p class="subtitle">2025 marks a year of accelerated hardware development and standardized security.</p>
+            <p class="section-subtitle">2025 marks a year of accelerated hardware development and standardized security.</p>
             <div class="quantum-grid">
                 <div class="quantum-column">
                     <h3>Hardware Snapshot (2025)</h3>
@@ -360,7 +567,6 @@
                         <li>NIST PQC Standards: ML-KEM, Dilithium, Falcon finalized in 2024</li>
                         <li>Financial Pilots: Goldman Sachs, HSBC piloting quantum portfolio optimization</li>
                         <li>Quantum Advantage: Experimentally demonstrated in risk modeling</li>
-                        <li>Investments: Estimated $70B in quantum finance by 2035</li>
                     </ul>
                 </div>
             </div>
@@ -369,7 +575,7 @@
 
     <!-- Mission -->
     <section id="mission">
-        <div class="container text-center">
+        <div class="container">
             <h2 class="section-title">Qynetic: Turning Quantum Advantage into Measurable Value</h2>
             <p style="font-size:32px; font-style:italic; max-width:1000px; margin:0 auto 80px;">
                 "Building neutral, open-source, quantum-augmented infrastructure for the global financial community."
@@ -398,8 +604,8 @@
     <section>
         <div class="container">
             <h2 class="section-title">Finland: The Strategic Hub for Quantum-DeFi Innovation</h2>
-            <p class="subtitle">Helsinki provides the ideal regulatory and technical environment for Qynetic.</p>
-            <div class="finland-content">
+            <p class="section-subtitle">Helsinki provides the ideal regulatory and technical environment for Qynetic.</p>
+            <div class="finland-grid">
                 <div class="finland-text">
                     <ul>
                         <li>
@@ -419,22 +625,193 @@
                             A thriving DeFi hub home to pioneers like Aave and Membrane Finance.
                         </li>
                     </ul>
-                    <div style="background:rgba(74,144,226,0.1); border-left:4px solid #4A90E2; padding:24px; margin-top:40px;">
+                    <div class="finland-info">
                         <p><strong>Qynetic Labs Oy</strong> is a Finnish limited company incorporated in December 2025, headquartered in Helsinki.</p>
                         <p>We leverage Finland's unique combination of regulatory clarity, world-class research, innovation funding, and a thriving DeFi ecosystem to build the next generation of quantum-augmented financial infrastructure.</p>
                     </div>
                 </div>
                 <div class="finland-image">
-                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888439722_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzL0o4MHM3WmpqN1RJQg.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg0Mzk3MjJfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMMG80TUhNM1dtcHFOMVJKUWcuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=cwpCQWnRIy042FKPUuiITSBYPd3EMICLD9S9-tsXvP1e847TslVnIggLinLVf4hkj85OUWUN5TtciBovqt03oEuaQBnj9fcMzhdWOP8OlydnnxJ14m9N0Fcrvx5nMUulKSj8G5zdCYETJgfgtC0kGQPeTxTg3XCRpYo~wmTxJRq1xxzzAn~5jq1RkrFGamxXOK2LGAPXZOgcR~s0bYnf3CDiw5GY91ooARQOui-6s0qkFMlM3zTX9ilgdPzYaXO78AmoU82Z~dKxtk1iRExvgCxIIufkfLKlhevbQB6arrZByYLV3jOohBrAWihYkb69lVPsk6pqmZ42q~nodaWOfQ__" alt="Helsinki">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888439722_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzL0o4MHM3WmpqN1RJQg.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg0Mzk3MjJfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMMG80TUhNM1dtcHFOMVJKUWcuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXSzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=cwpCQWnRIy042FKPUuiITSBYPd3EMICLD9S9-tsXvP1e847TslVnIggLinLVf4hkj85OUWUN5TtciBovqt03oEuaQBnj9fcMzhdWOP8OlydnnxJ14m9N0Fcrvx5nMUulKSj8G5zdCYETJgfgtC0kGQPeTxTg3XCRpYo~wmTxJRq1xxzzAn~5jq1RkrFGamxXOK2LGAPXZOgcR~s0bYnf3CDiw5GY91ooARQOui-6s0qkFMlM3zTX9ilgdPzYaXO78AmoU82Z~dKxtk1iRExvgCxIIufkfLKlhevbQB6arrZByYLV3jOohBrAWihYkb69lVPsk6pqmZ42q~nodaWOfQ__" alt="Helsinki">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact">
-        © 2025 Qynetic Labs Oy — Building the neutral infrastructure for the quantum era<br>
-        Helsinki, Finland • qynetic.io
+    <!-- Product Evolution -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Product Evolution: From Oracle to Settlement Layer</h2>
+            <p class="section-subtitle">A phased approach to integrating quantum capabilities as hardware matures.</p>
+            <div class="evolution-grid">
+                <div class="evolution-text">
+                    <p><strong>PHASE 1 Qynetic Oracle (2027)</strong><br>First commercial quantum-accelerated oracle. Features real-time portfolio optimization and quantum-inspired Monte-Carlo risk testing on current hardware.</p>
+                    <p><strong>PHASE 2 Qynetic VM (2029+)</strong><br>A specialized Virtual Machine that offloads hard subroutines to quantum co-processors as hardware matures, enabling complex financial logic execution.</p>
+                    <p><strong>PHASE 3 Qynetic Layer (2030+)</strong><br>Long-term vision for an L2/L3 settlement layer featuring Proof-of-Useful-Quantum-Work, providing a decentralized foundation for quantum finance.</p>
+                </div>
+                <div class="evolution-image">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888439722_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzLzFiYldySmFYME9SYg.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg0Mzk3MjJfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMekZpWWxkeVNtRllNRTlTWWcuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXSzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=vOfHN-pJmThGzV9S-gbqJHE7nfjtvIT7RBvUyy7Qc1lpxRNZEW1~Mzfwlkqpkjh1-bl4ORbgxM~L5dZUFl1rPXapP5zA55Dqe172Lqqj284sYbxsdNayS0IpRySTTp9396xi-z3sw3psqhNbQK8-OjtrlXJ6MtZ574jHQqVXGMtUoOxKpmOiYw93LsPheTYpMaL-I19TpQ3blVA3m2~VucCLqluZ2G-~w7ZmVVXkOwuBf0bxVqjL2nBtmn40MbkNJKSplhXe4bxxvXDMn7EKjHnVqITfVnDji9einasMvPB7m2foi9rN~bAmIiCGtt2GiabVdTXPO9tdE~cX51ZzgQ__" alt="Quantum Components">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Future-Proof Technology Stack (2025–2032)</h2>
+            <p class="section-subtitle">Transitioning from NIST PQC to decentralized quantum backends.</p>
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>2025–2028 (Pilot)</th>
+                        <th>2029+ (Scale)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cryptography</td>
+                        <td>NIST PQC (ML-KEM, Dilithium)</td>
+                        <td>Next-gen lattice schemes</td>
+                    </tr>
+                    <tr>
+                        <td>Quantum Backends</td>
+                        <td>IBM, Google, AWS Braket</td>
+                        <td>Decentralized providers</td>
+                    </tr>
+                    <tr>
+                        <td>Classical Stack</td>
+                        <td>Rust + Cosmos SDK</td>
+                        <td>Fully on-chain scheduler</td>
+                    </tr>
+                    <tr>
+                        <td>Consensus</td>
+                        <td>Tendermint BFT</td>
+                        <td>Proof-of-Useful-Quantum-Work</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Token -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">$QYN Token: Powering the Quantum Economy</h2>
+            <p class="section-subtitle">A fixed-supply utility token designed for the pay-per-qubit-second era.</p>
+            <div class="token-grid">
+                <div class="token-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Utility</h3>
+                    <p>Primary medium for accessing quantum-accelerated oracle services and executing complex subroutines on the Qynetic VM.</p>
+                </div>
+                <div class="token-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Supply</h3>
+                    <p>A fixed supply model ensures long-term predictability and aligns value with the growth of the quantum infrastructure ecosystem.</p>
+                </div>
+                <div class="token-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Realism</h3>
+                    <p>Utility becomes increasingly tangible as commercial quantum access grows, moving from experimental pilots to mainstream financial use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap">
+        <div class="container">
+            <h2 class="section-title">Strategic Roadmap: Delivering Real Value (2025–2030+)</h2>
+            <p class="section-subtitle">From Finnish incorporation to a decentralized quantum layer.</p>
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <div class="roadmap-date">2025</div>
+                    <div class="roadmap-title">Foundation</div>
+                    <p>Qynetic Labs Oy incorporation in Helsinki, Finland.</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-date">2026–2027</div>
+                    <div class="roadmap-title">Private Alpha (PoC)</div>
+                    <p>Quantum-inspired oracle pilots for hedge funds and institutional partners.</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-date">2027–2028</div>
+                    <div class="roadmap-title">Public Testnet & TGE</div>
+                    <p>Developer access, documentation release, and $QYN Token Generation Event.</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-date">2029+</div>
+                    <div class="roadmap-title">Qynetic VM Beta</div>
+                    <p>Transition to the 1,000+ logical qubit era with quantum subroutines.</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-date">2030+</div>
+                    <div class="roadmap-title">Qynetic Layer Launch</div>
+                    <p>Full deployment of the decentralized quantum settlement layer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Realism -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Realism Over Hype: The Qynetic Commitment</h2>
+            <p class="section-subtitle">Building the "Chainlink + Bloomberg Terminal" of the quantum era.</p>
+            <div class="realism-grid">
+                <div class="realism-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Infrastructure Focus</h3>
+                    <p>We avoid "meme coin" hype in favor of building essential, neutral infrastructure that serious players will use and pay for.</p>
+                </div>
+                <div class="realism-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Serious Utility</h3>
+                    <p>Our tools are designed for institutional financial players who require precision, security, and verifiable results.</p>
+                </div>
+                <div class="realism-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Step-by-Step Delivery</h3>
+                    <p>We ship code, prototypes, and incremental alpha rather than empty promises or speculative roadmaps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-text">
+                    <h2 class="section-title">Qynetic Labs Oy:<br>Shaping the Future from Helsinki</h2>
+                    <p style="font-size:24px; margin-bottom:60px;">
+                        Ready to ship code, prototypes, and incremental alpha.<br>
+                        We are building the <span class="highlight">foundational layer</span> for quantum-augmented finance.
+                    </p>
+                    <div style="font-size:20px;">
+                        <p><i class="fas fa-map-marker-alt" style="color:#4A90E2; margin-right:16px;"></i> Helsinki, Finland</p>
+                        <p><i class="fas fa-calendar-alt" style="color:#4A90E2; margin-right:16px;"></i> Incorporated December 2025</p>
+                        <p><i class="fas fa-globe" style="color:#4A90E2; margin-right:16px;"></i> qynetic.io</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2 style="color:#4A90E2; margin-bottom:32px;">Get in Touch</h2>
+                    <form action="https://formsubmit.co/QyneticOracle@gmail.com" method="POST">
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="message" placeholder="Your message" required></textarea>
+                        <input type="hidden" name="_subject" value="New message from qynetic.io">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://qynetic.io/thanks">
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Qynetic Labs Oy. All rights reserved. | Building boring, neutral infrastructure for the quantum era.
     </footer>
 
 </body>
