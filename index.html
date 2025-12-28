@@ -36,6 +36,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 80px;
+            transition: background 0.3s;
         }
         .logo {
             font-size: 28px;
@@ -56,16 +57,42 @@
         .nav-links a:hover {
             color: #4A90E2;
         }
+        .mobile-menu {
+            display: none;
+            font-size: 28px;
+            color: #BCCCDC;
+            cursor: pointer;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: rgba(11, 16, 38, 0.95);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+            z-index: 999;
+        }
+        .mobile-nav a {
+            color: #BCCCDC;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 10px 0;
+        }
 
         /* Hero */
         #hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
             overflow: hidden;
+            padding: 120px 80px 80px;
         }
         #hero::before, #hero::after {
             content: '';
@@ -121,7 +148,7 @@
 
         /* Sections */
         section {
-            padding: 160px 0;
+            padding: 140px 0;
         }
         .section-title {
             font-size: 48px;
@@ -362,12 +389,25 @@
             background: rgba(74, 144, 226, 0.3);
             top: 0;
             bottom: 0;
-            left: 80px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         .roadmap-item {
             position: relative;
-            margin-bottom: 60px;
-            padding-left: 140px;
+            margin-bottom: 80px;
+            padding: 0 60px;
+            width: 50%;
+        }
+        .roadmap-item:nth-child(odd) {
+            text-align: right;
+            padding-right: 80px;
+            padding-left: 0;
+        }
+        .roadmap-item:nth-child(even) {
+            text-align: left;
+            padding-left: 80px;
+            padding-right: 0;
+            left: 50%;
         }
         .roadmap-item::before {
             content: '';
@@ -376,8 +416,9 @@
             height: 16px;
             background: #4A90E2;
             border-radius: 50%;
-            left: 72px;
             top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1;
         }
         .roadmap-date {
@@ -471,6 +512,44 @@
             color: #BCCCDC;
             border-top: 1px solid rgba(188, 204, 220, 0.3);
         }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 1024px) {
+            .container { padding: 0 40px; }
+            h1 { font-size: 56px; }
+            #hero h1 { font-size: 56px; }
+            .section-title { font-size: 40px; }
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .mobile-nav.active { display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            section { padding: 100px 0; }
+            h1 { font-size: 48px; }
+            #hero h1 { font-size: 48px; }
+            .section-title { font-size: 36px; }
+            .btn { padding: 14px 28px; font-size: 16px; margin: 8px 0; width: 100%; }
+            .stats-grid, .bottlenecks-grid, .values-grid, .token-grid, .realism-grid {
+                gap: 40px;
+            }
+            .roadmap::before { left: 40px; }
+            .roadmap-item {
+                padding-left: 80px !important;
+                text-align: left !important;
+                width: 100%;
+                left: 0 !important;
+            }
+            .roadmap-item::before { left: 32px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 40px; }
+            #hero h1 { font-size: 40px; }
+            .section-title { font-size: 32px; }
+            p { font-size: 18px; }
+        }
     </style>
 </head>
 <body>
@@ -484,9 +563,18 @@
             <a href="#roadmap">Roadmap</a>
             <a href="#contact">Contact</a>
         </div>
+        <div class="mobile-menu" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#mission">Mission</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-    <!-- Hero -->
+    <!-- 1. Hero -->
     <section id="hero">
         <div class="container">
             <h1>Quantum-Augmented<br>Financial Infrastructure</h1>
@@ -499,7 +587,7 @@
         </div>
     </section>
 
-    <!-- Market -->
+    <!-- 2. Market -->
     <section>
         <div class="container">
             <h2 class="section-title">Global Finance Reaches $3 Trillion</h2>
@@ -521,7 +609,7 @@
         </div>
     </section>
 
-    <!-- Bottlenecks -->
+    <!-- 3. Bottlenecks -->
     <section id="challenges">
         <div class="container">
             <h2 class="section-title">Three Critical Bottlenecks</h2>
@@ -546,7 +634,7 @@
         </div>
     </section>
 
-    <!-- Quantum Era -->
+    <!-- 4. Quantum Era -->
     <section>
         <div class="container">
             <h2 class="section-title">The Quantum Era Transitions from Theory to Experimentation</h2>
@@ -573,7 +661,7 @@
         </div>
     </section>
 
-    <!-- Mission -->
+    <!-- 5. Mission -->
     <section id="mission">
         <div class="container">
             <h2 class="section-title">Qynetic: Turning Quantum Advantage into Measurable Value</h2>
@@ -600,7 +688,7 @@
         </div>
     </section>
 
-    <!-- Finland -->
+    <!-- 6. Finland -->
     <section>
         <div class="container">
             <h2 class="section-title">Finland: The Strategic Hub for Quantum-DeFi Innovation</h2>
@@ -608,22 +696,10 @@
             <div class="finland-grid">
                 <div class="finland-text">
                     <ul>
-                        <li>
-                            <strong>Regulatory Clarity</strong><br>
-                            EU MiCA provides a clear licensing path (CASP) for digital asset service providers, ensuring legal certainty.
-                        </li>
-                        <li>
-                            <strong>Talent & Research</strong><br>
-                            Direct access to world-class quantum research at Aalto University, VTT, and specialized firms like Algorithmiq.
-                        </li>
-                        <li>
-                            <strong>Financial Support</strong><br>
-                            Strong backing from Business Finland and Finnvera for deep-tech ventures, combined with a stable 20% corporate tax.
-                        </li>
-                        <li>
-                            <strong>Helsinki Ecosystem</strong><br>
-                            A thriving DeFi hub home to pioneers like Aave and Membrane Finance.
-                        </li>
+                        <li><strong>Regulatory Clarity</strong><br>EU MiCA provides a clear licensing path (CASP) for digital asset service providers, ensuring legal certainty.</li>
+                        <li><strong>Talent & Research</strong><br>Direct access to world-class quantum research at Aalto University, VTT, and specialized firms like Algorithmiq.</li>
+                        <li><strong>Financial Support</strong><br>Strong backing from Business Finland and Finnvera for deep-tech ventures, combined with a stable 20% corporate tax.</li>
+                        <li><strong>Helsinki Ecosystem</strong><br>A thriving DeFi hub home to pioneers like Aave and Membrane Finance.</li>
                     </ul>
                     <div class="finland-info">
                         <p><strong>Qynetic Labs Oy</strong> is a Finnish limited company incorporated in December 2025, headquartered in Helsinki.</p>
@@ -637,7 +713,7 @@
         </div>
     </section>
 
-    <!-- Product Evolution -->
+    <!-- 7. Product Evolution -->
     <section>
         <div class="container">
             <h2 class="section-title">Product Evolution: From Oracle to Settlement Layer</h2>
@@ -655,7 +731,7 @@
         </div>
     </section>
 
-    <!-- Tech Stack -->
+    <!-- 8. Tech Stack -->
     <section>
         <div class="container">
             <h2 class="section-title">Future-Proof Technology Stack (2025–2032)</h2>
@@ -694,7 +770,7 @@
         </div>
     </section>
 
-    <!-- Token -->
+    <!-- 9. Token -->
     <section>
         <div class="container">
             <h2 class="section-title">$QYN Token: Powering the Quantum Economy</h2>
@@ -719,7 +795,7 @@
         </div>
     </section>
 
-    <!-- Roadmap -->
+    <!-- 10. Roadmap -->
     <section id="roadmap">
         <div class="container">
             <h2 class="section-title">Strategic Roadmap: Delivering Real Value (2025–2030+)</h2>
@@ -754,7 +830,7 @@
         </div>
     </section>
 
-    <!-- Realism -->
+    <!-- 11. Realism -->
     <section>
         <div class="container">
             <h2 class="section-title">Realism Over Hype: The Qynetic Commitment</h2>
@@ -779,7 +855,7 @@
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- 12. Contact -->
     <section id="contact">
         <div class="container">
             <div class="contact-grid">
@@ -813,6 +889,12 @@
     <footer>
         © 2025 Qynetic Labs Oy. All rights reserved. | Building boring, neutral infrastructure for the quantum era.
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById("mobileNav").classList.toggle("active");
+        }
+    </script>
 
 </body>
 </html>
