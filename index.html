@@ -14,11 +14,47 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
         }
+
+        /* Hieno abstrakti taustagrafiikka */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(74, 144, 226, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(74, 144, 226, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 90% 80%, rgba(74, 144, 226, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 40% 40%, rgba(74, 144, 226, 0.2) 1px, transparent 1px),
+                radial-gradient(circle at 70% 60%, rgba(74, 144, 226, 0.2) 1px, transparent 1px);
+            background-size: 80px 80px, 100px 100px, 120px 120px, 90px 90px;
+            background-position: 0 0, 40px 60px, 80px 20px, 30px 80px;
+            pointer-events: none;
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-100px) translateX(100px); }
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 80px;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
         }
 
         /* Navbar */
@@ -35,8 +71,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 80px;
-            transition: background 0.3s;
+            padding: 0 40px;
         }
         .logo {
             font-size: 28px;
@@ -90,22 +125,10 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            padding: 120px 80px 80px;
+            padding: 140px 40px 80px;
         }
-        #hero::before, #hero::after {
-            content: '';
-            position: absolute;
-            background: rgba(188, 204, 220, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-        #hero::before { width: 600px; height: 600px; top: -200px; right: -200px; }
-        #hero::after { width: 400px; height: 400px; bottom: -150px; left: -150px; }
         #hero h1 {
-            font-size: 72px;
+            font-size: 64px;
             font-weight: 700;
             color: #4A90E2;
             margin-bottom: 24px;
@@ -124,7 +147,7 @@
         .btn {
             display: inline-block;
             padding: 16px 36px;
-            margin: 0 16px;
+            margin: 0 12px;
             background: transparent;
             border: 1px solid #4A90E2;
             color: #4A90E2;
@@ -169,21 +192,21 @@
         .stats-grid {
             display: flex;
             justify-content: center;
-            gap: 80px;
+            gap: 60px;
             flex-wrap: wrap;
         }
         .stat-item {
             text-align: center;
-            min-width: 280px;
+            min-width: 250px;
         }
         .stat-value {
-            font-size: 40px;
+            font-size: 36px;
             color: #4A90E2;
             font-weight: 700;
             margin-bottom: 16px;
         }
         .stat-label {
-            font-size: 20px;
+            font-size: 18px;
             color: #BCCCDC;
         }
 
@@ -191,56 +214,57 @@
         .bottlenecks-grid {
             display: flex;
             justify-content: center;
-            gap: 60px;
+            gap: 40px;
             flex-wrap: wrap;
         }
         .bottleneck-card {
             background: rgba(74, 144, 226, 0.05);
             border: 1px solid rgba(74, 144, 226, 0.2);
             border-radius: 16px;
-            padding: 40px;
-            width: 380px;
+            padding: 32px;
+            width: 100%;
+            max-width: 380px;
             text-align: center;
         }
         .bottleneck-card i {
-            font-size: 56px;
+            font-size: 48px;
             color: #4A90E2;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
         .bottleneck-card h3 {
-            font-size: 28px;
+            font-size: 24px;
             color: #F0F4F8;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         /* Quantum Era */
         .quantum-grid {
             display: flex;
-            gap: 100px;
+            gap: 60px;
             flex-wrap: wrap;
             justify-content: center;
         }
         .quantum-column {
             flex: 1;
-            min-width: 400px;
+            min-width: 300px;
         }
         .quantum-column h3 {
             font-size: 28px;
             color: #4A90E2;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
         .quantum-column ul {
-            font-size: 20px;
-            padding-left: 28px;
+            font-size: 18px;
+            padding-left: 24px;
         }
         .quantum-column li {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         /* Mission Values */
         .values-grid {
             display: flex;
-            gap: 60px;
+            gap: 40px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -249,50 +273,46 @@
             max-width: 380px;
         }
         .value-card i {
-            font-size: 56px;
+            font-size: 48px;
             color: #4A90E2;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
         .value-card h3 {
-            font-size: 28px;
+            font-size: 24px;
             color: #F0F4F8;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         /* Finland */
         .finland-grid {
             display: flex;
-            gap: 100px;
-            align-items: start;
+            gap: 60px;
+            align-items: center;
             flex-wrap: wrap;
         }
-        .finland-text {
+        .finland-text, .finland-image {
             flex: 1;
-            min-width: 400px;
+            min-width: 300px;
         }
         .finland-text ul {
-            font-size: 20px;
-            padding-left: 28px;
-            margin: 40px 0;
+            font-size: 18px;
+            padding-left: 24px;
+            margin: 32px 0;
         }
         .finland-text li {
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
         .finland-text li strong {
             color: #4A90E2;
+            font-size: 20px;
             display: block;
-            margin-bottom: 12px;
-            font-size: 24px;
+            margin-bottom: 8px;
         }
         .finland-info {
             background: rgba(74, 144, 226, 0.1);
             border-left: 4px solid #4A90E2;
-            padding: 32px;
-            margin-top: 40px;
-        }
-        .finland-image {
-            flex: 1;
-            min-width: 400px;
+            padding: 24px;
+            margin-top: 32px;
         }
         .finland-image img {
             width: 100%;
@@ -303,29 +323,25 @@
         /* Product Evolution */
         .evolution-grid {
             display: flex;
-            gap: 100px;
+            gap: 60px;
             align-items: center;
             flex-wrap: wrap;
         }
-        .evolution-text {
+        .evolution-text, .evolution-image {
             flex: 1;
-            min-width: 400px;
+            min-width: 300px;
         }
         .evolution-text p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            padding-left: 40px;
+            font-size: 18px;
+            margin-bottom: 32px;
+            padding-left: 32px;
             border-left: 4px solid #4A90E2;
         }
         .evolution-text strong {
             color: #4A90E2;
-            font-size: 24px;
+            font-size: 22px;
             display: block;
-            margin-bottom: 12px;
-        }
-        .evolution-image {
-            flex: 1;
-            min-width: 400px;
+            margin-bottom: 8px;
         }
         .evolution-image img {
             width: 100%;
@@ -335,17 +351,17 @@
         /* Tech Stack Table */
         .tech-table {
             width: 100%;
-            max-width: 1000px;
-            margin: 60px auto;
+            margin: 40px 0;
             border-collapse: collapse;
+            font-size: 18px;
         }
         .tech-table th, .tech-table td {
-            padding: 24px;
+            padding: 20px;
             text-align: left;
             border-bottom: 1px solid rgba(188, 204, 220, 0.1);
         }
         .tech-table th {
-            font-size: 24px;
+            font-size: 22px;
             color: #4A90E2;
             border-bottom: 2px solid rgba(74, 144, 226, 0.3);
         }
@@ -357,7 +373,7 @@
         /* Token */
         .token-grid {
             display: flex;
-            gap: 60px;
+            gap: 40px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -366,26 +382,26 @@
             max-width: 380px;
         }
         .token-card i {
-            font-size: 56px;
+            font-size: 48px;
             color: #4A90E2;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
         .token-card h3 {
-            font-size: 28px;
+            font-size: 24px;
             color: #F0F4F8;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         /* Roadmap */
         .roadmap {
             max-width: 800px;
-            margin: 80px auto;
+            margin: 60px auto;
             position: relative;
         }
         .roadmap::before {
             content: '';
             position: absolute;
-            width: 4px;
+            width: 3px;
             background: rgba(74, 144, 226, 0.3);
             top: 0;
             bottom: 0;
@@ -394,7 +410,7 @@
         }
         .roadmap-item {
             position: relative;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             padding: 0 60px;
             width: 50%;
         }
@@ -422,13 +438,13 @@
             z-index: 1;
         }
         .roadmap-date {
-            font-size: 28px;
+            font-size: 26px;
             color: #4A90E2;
             font-weight: 700;
             margin-bottom: 12px;
         }
         .roadmap-title {
-            font-size: 24px;
+            font-size: 22px;
             color: #BCCCDC;
             font-weight: 600;
             margin-bottom: 12px;
@@ -437,7 +453,7 @@
         /* Realism */
         .realism-grid {
             display: flex;
-            gap: 60px;
+            gap: 40px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -446,14 +462,14 @@
             max-width: 380px;
         }
         .realism-card i {
-            font-size: 56px;
+            font-size: 48px;
             color: #4A90E2;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
         .realism-card h3 {
-            font-size: 28px;
+            font-size: 24px;
             color: #F0F4F8;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         /* Contact */
@@ -462,19 +478,17 @@
         }
         .contact-grid {
             display: flex;
-            gap: 100px;
+            gap: 60px;
             align-items: center;
             flex-wrap: wrap;
         }
-        .contact-text {
+        .contact-text, .contact-form {
             flex: 1;
-            min-width: 400px;
+            min-width: 300px;
         }
         .contact-form {
-            flex: 1;
-            min-width: 400px;
             background: rgba(11, 16, 38, 0.6);
-            padding: 40px;
+            padding: 32px;
             border-radius: 16px;
             border: 1px solid rgba(74, 144, 226, 0.2);
         }
@@ -507,8 +521,8 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 80px;
-            font-size: 18px;
+            padding: 80px 40px;
+            font-size: 16px;
             color: #BCCCDC;
             border-top: 1px solid rgba(188, 204, 220, 0.3);
         }
