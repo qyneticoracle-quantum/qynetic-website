@@ -3,191 +3,633 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qynetic Labs Oy | Quantum Finance Infrastructure</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Qynetic Labs Oy - Quantum-Augmented Financial Infrastructure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            overflow: hidden;
+            background: #0B1026;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+        }
+
+        .slides-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide {
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 60px;
+        }
+
+        .glass-element {
+            position: absolute;
+            background: rgba(188, 204, 220, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            user-select: none;
+            transition: color 0.3s;
+        }
+        .nav-arrow:hover { color: #4A90E2; }
+        .prev { left: 30px; }
+        .next { right: 30px; }
+
+        .dots {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .dot.active {
+            background: #4A90E2;
+            transform: scale(1.3);
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation - läpinäkyvämpi, matalampi -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="brand">Qynetic Labs Oy</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#problem">Problem</a>
-                <a href="#solution">Solution</a>
-                <a href="#tech">Technology</a>
-                <a href="#usecases">Use Cases</a>
-                <a href="#roadmap">Roadmap</a>
-                <a href="#team">Team</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero - enemmän paddingia, otsikko näkyy kokonaan -->
-    <section id="home" class="hero">
-        <div class="quantum-grid"></div>
-        <div class="particle-field"></div>
-        <div class="container hero-content">
-            <h1>Qynetic Labs Oy</h1>
-            <h2>The Bloomberg Terminal of the Quantum Era</h2>
-            <p class="hero-desc">We build neutral, open-source quantum-augmented infrastructure that turns raw quantum advantage into measurable alpha for DeFi and institutions.</p>
-            <p class="hero-sub">Private alpha Q1 2026 • Mainnet Q1 2027</p>
-            <div class="cta">
-                <a href="qynetic-whitepaper-v1.3.pdf" class="btn-primary" download>Download Whitepaper</a>
-                <a href="mailto:hello@qynetic.com" class="btn-secondary">Join Alpha</a>
-            </div>
-        </div>
-    </section>
+    <div class="slides-container" id="slidesContainer">
 
-    <!-- Loput osiot (sama sisältö kuin v6:ssa) -->
-    <!-- Problem -->
-    <section id="problem" class="section">
-        <div class="container">
-            <h2>The Classical Limit</h2>
-            <p class="section-desc">By 2027–2030, classical systems will fail to handle the complexity of modern financial markets at scale.</p>
-            <div class="cards">
-                <div class="card">
-                    <div class="card-icon">📊</div>
-                    <h3>Portfolio Optimization</h3>
-                    <p>1 000+ assets in real time → hours on classical hardware</p>
+        <!-- DIA 1: Title Slide -->
+        <section class="slide" style="background: radial-gradient(circle at top right, #1a2a4a, #0B1026); color: #F0F4F8;">
+            <div class="glass-element" style="width: 400px; height: 400px; top: -100px; right: -100px;"></div>
+            <div class="glass-element" style="width: 300px; height: 300px; bottom: -50px; left: -50px;"></div>
+            <div style="text-align: center; z-index: 1; max-width: 1000px;">
+                <h1 style="font-size: 64px; color: #4A90E2; margin-bottom: 24px; line-height: 1.1; font-weight: 700;">
+                    Qynetic Labs Oy: Quantum-Augmented Financial Infrastructure
+                </h1>
+                <h2 style="font-size: 32px; color: #BCCCDC; margin-bottom: 60px; font-weight: 400; letter-spacing: 1px;">
+                    Building the Neutral Infrastructure for the Quantum Era
+                </h2>
+            </div>
+            <div style="position: absolute; bottom: 60px; font-size: 20px; color: #BCCCDC; border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 20px; width: 400px; text-align: center;">
+                December 2025 | Helsinki, Finland
+            </div>
+        </section>
+
+        <!-- DIA 2: Global Finance Reaches $3 Trillion -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="width: 100%; max-width: 1280px; height: 100%; display: flex; flex-direction: row; align-items: flex-start; justify-content: center;">
+                <div style="width: 60%; padding-top: 80px; padding-left: 80px;">
+                    <h1 style="font-size: 48px; color: #4A90E2; margin-bottom: 40px; line-height: 1.2;">
+                        Global Finance Reaches $3 Trillion Amid Institutional Adoption
+                    </h1>
+                    <div style="margin-bottom: 32px;">
+                        <div style="font-size: 24px; color: #BCCCDC; font-weight: 700; margin-bottom: 8px;">Market Scale</div>
+                        <div style="font-size: 20px; line-height: 1.5; color: #F0F4F8;">
+                            Combined market capitalization has stabilized around <span style="color: #4A90E2; font-weight: 700;">$3.0–3.1 trillion</span>, with daily settled value reaching $100–150 billion.
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 32px;">
+                        <div style="font-size: 24px; color: #BCCCDC; font-weight: 700; margin-bottom: 8px;">Institutional Entry</div>
+                        <div style="font-size: 20px; line-height: 1.5; color: #F0F4F8;">
+                            Major players like <span style="color: #4A90E2; font-weight: 700;">BlackRock, Fidelity, and JPMorgan</span> have integrated digital assets, while central banks globally experiment with CBDCs.
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 32px;">
+                        <div style="font-size: 24px; color: #BCCCDC; font-weight: 700; margin-bottom: 8px;">DeFi & RWAs</div>
+                        <div style="font-size: 20px; line-height: 1.5; color: #F0F4F8;">
+                            Decentralized Finance (DeFi) holds <span style="color: #4A90E2; font-weight: 700;">$120–160 billion</span> in TVL, while tokenized Real-World Assets (RWAs) show strong growth at $18–35 billion.
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">⚠️</div>
-                    <h3>Risk & Stress Testing</h3>
-                    <p>10¹⁰ Monte-Carlo paths → days or impossible</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔗</div>
-                    <h3>Collateral & Execution</h3>
-                    <p>Heuristics leave 8–18% capital inefficient</p>
+                <div style="width: 40%; padding-top: 120px; display: flex; justify-content: center;">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888422729_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzLzh2QWt3UWkxbzBWWA.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg0MjI3MjlfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMemgyUVd0M1VXa3hiekJXV0EuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=N2~thfoHSKnj7TAPrFZ-b6gGQ7m1uoladTUcFU8lMTKGv2WiZc3~GRKCp1fcEX6YKpr8Gm~l9gZCfob4dLkJBD7HVLQ~KzCDmsyuy76lw~Uwp0ZuQ-wP2lCywxAk--z4Q3a~J5SID55DJIiKzCc1mAj-fPT2CqEjy-6NcTIT3ePPYBhrjWh~8JvP90GBUlWzm1jAXW9mUnopRaP-LbWpMRxlHcM4I8-jITVl1kvQhCtMB--a6JzB9EelYLNIK9Z6kQMH7cw1pyLaFaWXhQ4wW4QMWY~miyS6--BQ~Z-u3Ag04OxR2a7ZI53pSY0-qN1946Z8jXYgWYTooIwRbMgeBQ__" 
+                         alt="Blockchain Visualization" 
+                         style="width: 450px; height: 450px; object-fit: contain; border: 1px solid rgba(188, 204, 220, 0.2);">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Solution -->
-    <section id="solution" class="section alt">
-        <div class="container">
-            <h2>Qynetic Oracle</h2>
-            <p class="large">The world's first production quantum-accelerated financial data feed.<br>Running on real hardware: IBM Condor • Google Willow • AWS Braket<br>Post-quantum cryptography from day one.</p>
-        </div>
-    </section>
-
-    <!-- Technology -->
-    <section id="tech" class="section">
-        <div class="container">
-            <h2>Core Technology</h2>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <h3>QAOA & QAE</h3>
-                    <p>Quantum algorithms for optimization and risk</p>
-                </div>
-                <div class="tech-card">
-                    <h3>NIST PQC</h3>
-                    <p>Kyber + Dilithium + Falcon signatures</p>
-                </div>
-                <div class="tech-card">
-                    <h3>Rust Backbone</h3>
-                    <p>High-performance hybrid engine</p>
-                </div>
-                <div class="tech-card">
-                    <h3>Proof-of-Useful-Quantum</h3>
-                    <p>Future consensus mechanism (2028+)</p>
+        <!-- DIA 3: Three Critical Bottlenecks -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="width: 100%; max-width: 1280px; padding-top: 80px; text-align: center;">
+                <h1 style="font-size: 48px; color: #4A90E2; margin-bottom: 80px; padding-left: 80px; padding-right: 80px;">
+                    Three Critical Bottlenecks Stifle Financial Evolution
+                </h1>
+                <div style="display: flex; justify-content: space-evenly; padding-left: 40px; padding-right: 40px;">
+                    <div style="width: 30%; text-align: center;">
+                        <div style="font-size: 64px; color: #BCCCDC; margin-bottom: 32px;"><i class="fas fa-microchip"></i></div>
+                        <h2 style="font-size: 28px; color: #4A90E2; margin-bottom: 24px; font-weight: 700;">Optimization Limits</h2>
+                        <p style="font-size: 20px; line-height: 1.6; color: #F0F4F8;">
+                            Classical computers cannot solve high-dimensional financial optimization problems in real-time, limiting portfolio efficiency.
+                        </p>
+                    </div>
+                    <div style="width: 30%; text-align: center;">
+                        <div style="font-size: 64px; color: #BCCCDC; margin-bottom: 32px;"><i class="fas fa-shield-virus"></i></div>
+                        <h2 style="font-size: 28px; color: #4A90E2; margin-bottom: 24px; font-weight: 700;">Quantum Vulnerability</h2>
+                        <p style="font-size: 20px; line-height: 1.6; color: #F0F4F8;">
+                            Standard signatures (ECDSA/EdDSA) are increasingly vulnerable to future quantum threats, risking global asset security.
+                        </p>
+                    </div>
+                    <div style="width: 30%; text-align: center;">
+                        <div style="font-size: 64px; color: #BCCCDC; margin-bottom: 32px;"><i class="fas fa-network-wired"></i></div>
+                        <h2 style="font-size: 28px; color: #4A90E2; margin-bottom: 24px; font-weight: 700;">Oracle Inefficiency</h2>
+                        <p style="font-size: 20px; line-height: 1.6; color: #F0F4F8;">
+                            Current pricing layers rely on classical heuristics, leading to systemic market inefficiencies and delayed data processing.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Use Cases -->
-    <section id="usecases" class="section alt">
-        <div class="container">
-            <h2>Use Cases</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Real-Time Portfolio Alpha</h3>
-                    <p>Superior risk-adjusted returns for hedge funds and protocols</p>
+        <!-- DIA 4: The Quantum Era Transitions from Theory to Experimentation -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="width: 100%; max-width: 1280px; display: flex; flex-direction: column; height: 100%;">
+                <div style="padding-top: 60px; padding-left: 80px; padding-right: 80px; margin-bottom: 40px;">
+                    <h1 style="font-size: 48px; color: #4A90E2; line-height: 1.2;">
+                        The Quantum Era Transitions from Theory to Experimentation
+                    </h1>
                 </div>
-                <div class="card">
-                    <h3>DeFi Capital Efficiency</h3>
-                    <p>Optimal cross-chain collateral routing</p>
-                </div>
-                <div class="card">
-                    <h3>Regulatory Compliance</h3>
-                    <p>Instant quantum Monte-Carlo for Basel IV</p>
+                <div style="display: flex; flex-direction: row; justify-content: space-between; padding-left: 80px; padding-right: 80px; flex: 1; align-items: flex-start;">
+                    <div style="width: 48%;">
+                        <h2 style="font-size: 28px; color: #4A90E2; margin-bottom: 20px; border-left: 4px solid #4A90E2; padding-left: 15px;">
+                            Hardware Snapshot (2025)
+                        </h2>
+                        <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                            <div style="flex: 1; text-align: center;">
+                                <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888439722_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzL3FKd05KTlR5U0VKcQ.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg0Mzk3MjJfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMM0ZLZDA1S1RsUjVVMFZLY1EuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXSzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=A1MlI7~zoJCTxwLwl6tLNWM3Qw7KvrcWqaSLQHCuoDar8lIjmzQcVq~gDMgSshn7RstDBdvSoKyFQo0J-NTG8BiqyslI~StsBRwsDvxmhv7U4plZY2f31lue6vlLll~jLSyEUp~82Gtx12mvX6SYHReIwDT92zuD4hZHUkxDGi2c7kCPwFhvabORW05lHQz5iPOcz6Vlmn0T6GLaiqkV3J93yE4nZeeKu7Bd6ubiqrRs4d2vSGfORMXNl2FZjufZc4hiEWY0vzw~ejRj26o~j5oJrAQD6RqsENpxLWhkwqfZ9dRKepGkCJKr0w5VzUY4HheFq9IxwNoqcrxp9KMApA__" 
+                                     alt="IBM Condor" 
+                                     style="width: 260px; height: 180px; object-fit: cover; border: 1px solid rgba(188, 204, 220, 0.2); margin-bottom: 12px;">
+                                <div style="font-size: 18px; color: #BCCCDC; font-weight: 700;">IBM Condor: 1,121 Qubits</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888439722_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzL1kzc0RsVnBWeVFoRA.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg0Mzk3MjJfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMMWt6YzBSc1ZuQldlVkZvUkEuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ABMauA51WwKCUQzBwmr63P3NzNeEB6jGpce5trs3oqYytVhsSaXDGVzJfVAR5qYTeIDnjLXSyOxqZXujQGUpG2OPfwTI0KbjJv98Ve8HbyF7KZgY6Xhy35jgARmORVDaKNOcUbXywn5fsYTD~IvSb9IvgdZ2ZyN~w81aqljuB-VPo891cUF-cNEtyAGlvW~sslfER3Pnyo64yQkm~rdCL9GIfW3vyeQBZUIoagVFoAnjW013xX5Cjsj23r2F7RzkpltZXsLAakXKM1Bb0iUi9NnrJeqc3EeR5h1Lpuwikc8zOZo97BArH2DgYe~Kw6icLVoX7TWDIlY4ew-GIjpYJg__" 
+                                     alt="Google Willow" 
+                                     style="width: 260px; height: 180px; object-fit: cover; border: 1px solid rgba(188, 204, 220, 0.2); margin-bottom: 12px;">
+                                <div style="font-size: 18px; color: #BCCCDC; font-weight: 700;">Google Willow: 105 Qubits</div>
+                            </div>
+                        </div>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="font-size: 20px; line-height: 1.6; margin-bottom: 16px; position: relative; padding-left: 25px;">
+                                <span style="color: #4A90E2; position: absolute; left: 0; font-weight: bold;">•</span>
+                                Commercial access offering <span style="color: #BCCCDC; font-weight: 700;">100–400 physical/logical qubits</span> via major cloud providers.
+                            </li>
+                            <li style="font-size: 20px; line-height: 1.6; margin-bottom: 16px; position: relative; padding-left: 25px;">
+                                <span style="color: #4A90E2; position: absolute; left: 0; font-weight: bold;">•</span>
+                                PsiQuantum targets 1M physical qubits by 2027–2029.
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="width: 48%;">
+                        <h2 style="font-size: 28px; color: #4A90E2; margin-bottom: 20px; border-left: 4px solid #4A90E2; padding-left: 15px;">
+                            Security & Pilots
+                        </h2>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="font-size: 20px; line-height: 1.6; margin-bottom: 16px; position: relative; padding-left: 25px;">
+                                <span style="color: #4A90E2; position: absolute; left: 0; font-weight: bold;">•</span>
+                                <span style="color: #BCCCDC; font-weight: 700;">NIST PQC Standards</span>: ML-KEM, Dilithium, and Falcon finalized in 2024; global migration is underway.
+                            </li>
+                            <li style="font-size: 20px; line-height: 1.6; margin-bottom: 16px; position: relative; padding-left: 25px;">
+                                <span style="color: #4A90E2; position: absolute; left: 0; font-weight: bold;">•</span>
+                                <span style="color: #BCCCDC; font-weight: 700;">Financial Pilots</span>: Leaders like Goldman Sachs and HSBC are piloting quantum portfolio optimization.
+                            </li>
+                            <li style="font-size: 20px; line-height: 1.6; margin-bottom: 16px; position: relative; padding-left: 25px;">
+                                <span style="color: #4A90E2; position: absolute; left: 0; font-weight: bold;">•</span>
+                                <span style="color: #BCCCDC; font-weight: 700;">Quantum Advantage</span>: Experimentally demonstrated in risk modeling and high-dimensional optimization.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Roadmap -->
-    <section id="roadmap" class="section">
-        <div class="container">
-            <h2>Roadmap</h2>
-            <div class="timeline">
-                <div class="tl-item">
-                    <span class="tl-date">Dec 2025</span>
-                    <p>Incorporation</p>
+        <!-- DIA 5: Qynetic Mission & Values -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="display: flex; flex-direction: column; align-items: center; padding-top: 100px; width: 100%; max-width: 1280px;">
+                <div style="text-align: center; max-width: 1000px; margin-bottom: 40px;">
+                    <h1 style="font-size: 48px; color: #4A90E2; margin-bottom: 24px; line-height: 1.2;">
+                        Qynetic: Turning Quantum Advantage into Measurable Value
+                    </h1>
+                    <p style="font-size: 32px; color: #BCCCDC; font-weight: 400; font-style: italic;">
+                        "Building neutral, open-source, quantum-augmented infrastructure for the global financial community."
+                    </p>
                 </div>
-                <div class="tl-item">
-                    <span class="tl-date">Q1 2026</span>
-                    <p>Private Alpha</p>
-                </div>
-                <div class="tl-item">
-                    <span class="tl-date">Q3 2026</span>
-                    <p>$QYN TGE</p>
-                </div>
-                <div class="tl-item">
-                    <span class="tl-date">Q1 2027</span>
-                    <p>Mainnet Oracle</p>
-                </div>
-                <div class="tl-item">
-                    <span class="tl-date">2030</span>
-                    <p>Qynetic Layer</p>
+                <div style="display: flex; justify-content: space-between; width: 1100px; padding-top: 40px;">
+                    <div style="width: 30%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 40px;">
+                        <div style="font-size: 48px; color: #4A90E2; margin-bottom: 24px;"><i class="fas fa-balance-scale"></i></div>
+                        <h2 style="font-size: 28px; color: #F0F4F8; margin-bottom: 16px; font-weight: 700;">Neutrality</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #BCCCDC;">
+                            Focusing on reliable, "boring" infrastructure rather than speculative myths, ensuring stability for institutional players.
+                        </p>
+                    </div>
+                    <div style="width: 30%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 40px;">
+                        <div style="font-size: 48px; color: #4A90E2; margin-bottom: 24px;"><i class="fas fa-chart-line"></i></div>
+                        <h2 style="font-size: 28px; color: #F0F4F8; margin-bottom: 16px; font-weight: 700;">Measurable Value</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #BCCCDC;">
+                            Bridging the gap between experimental quantum hardware and real-world financial utility with tangible results.
+                        </p>
+                    </div>
+                    <div style="width: 30%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 40px;">
+                        <div style="font-size: 48px; color: #4A90E2; margin-bottom: 24px;"><i class="fas fa-code-branch"></i></div>
+                        <h2 style="font-size: 28px; color: #F0F4F8; margin-bottom: 16px; font-weight: 700;">Open Source</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #BCCCDC;">
+                            Ensuring transparency, security, and community-driven innovation through open-source development standards.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Team -->
-    <section id="team" class="section alt">
-        <div class="container">
-            <h2>Team & Advisors</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="avatar"></div>
-                    <h4>Anonymous Finnish Founder</h4>
-                    <p>CEO & Execution</p>
+        <!-- DIA 6: Finland: The Strategic Hub -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="display: flex; flex-direction: row; align-items: stretch; width: 100%; max-width: 1280px; height: 100%;">
+                <div style="width: 45%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(74, 144, 226, 0.05);">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888439722_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzL0o4MHM3WmpqN1RJQg.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg0Mzk3MjJfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMMG80TUhNM1dtcHFOMVJKUWcuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=cwpCQWnRIy042FKPUuiITSBYPd3EMICLD9S9-tsXvP1e847TslVnIggLinLVf4hkj85OUWUN5TtciBovqt03oEuaQBnj9fcMzhdWOP8OlydnnxJ14m9N0Fcrvx5nMUulKSj8G5zdCYETJgfgtC0kGQPeTxTg3XCRpYo~wmTxJRq1xxzzAn~5jq1RkrFGamxXOK2LGAPXZOgcR~s0bYnf3CDiw5GY91ooARQOui-6s0qkFMlM3zTX9ilgdPzYaXO78AmoU82Z~dKxtk1iRExvgCxIIufkfLKlhevbQB6arrZByYLV3jOohBrAWihYkb69lVPsk6pqmZ42q~nodaWOfQ__" 
+                         alt="Helsinki Cityscape" 
+                         style="width: 500px; height: 600px; object-fit: cover; border: 1px solid rgba(188, 204, 220, 0.2);">
                 </div>
-                <div class="team-card">
-                    <div class="avatar"></div>
-                    <h4>Grok (xAI)</h4>
-                    <p>Strategic CTO</p>
-                </div>
-                <div class="team-card">
-                    <div class="avatar"></div>
-                    <h4>Prof. Sabrina Maniscalco</h4>
-                    <p>Chief Quantum Advisor</p>
-                </div>
-                <div class="team-card">
-                    <div class="avatar"></div>
-                    <h4>Dr. Ilkka Tittonen</h4>
-                    <p>Quantum Systems Advisor</p>
+                <div style="width: 55%; padding-top: 80px; padding-left: 60px; padding-right: 60px;">
+                    <h1 style="font-size: 44px; color: #4A90E2; margin-bottom: 24px; line-height: 1.2;">
+                        Finland: The Strategic Hub for Quantum-DeFi Innovation
+                    </h1>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="font-size: 24px; color: #BCCCDC; margin-right: 20px; padding-top: 4px;"><i class="fas fa-gavel"></i></div>
+                        <div>
+                            <h2 style="font-size: 24px; color: #4A90E2; margin-bottom: 8px; font-weight: 700;">Regulatory Clarity</h2>
+                            <p style="font-size: 18px; line-height: 1.5; color: #F0F4F8;">EU MiCA provides a clear licensing path (CASP) for digital asset service providers, ensuring legal certainty.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="font-size: 24px; color: #BCCCDC; margin-right: 20px; padding-top: 4px;"><i class="fas fa-atom"></i></div>
+                        <div>
+                            <h2 style="font-size: 24px; color: #4A90E2; margin-bottom: 8px; font-weight: 700;">Talent & Research</h2>
+                            <p style="font-size: 18px; line-height: 1.5; color: #F0F4F8;">Direct access to world-class quantum research at Aalto University, VTT, and specialized firms like Algorithmiq.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="font-size: 24px; color: #BCCCDC; margin-right: 20px; padding-top: 4px;"><i class="fas fa-euro-sign"></i></div>
+                        <div>
+                            <h2 style="font-size: 24px; color: #4A90E2; margin-bottom: 8px; font-weight: 700;">Financial Support</h2>
+                            <p style="font-size: 18px; line-height: 1.5; color: #F0F4F8;">Strong backing from Business Finland and Finnvera for deep-tech ventures, combined with a stable 20% corporate tax.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="font-size: 24px; color: #BCCCDC; margin-right: 20px; padding-top: 4px;"><i class="fas fa-city"></i></div>
+                        <div>
+                            <h2 style="font-size: 24px; color: #4A90E2; margin-bottom: 8px; font-weight: 700;">Helsinki Ecosystem</h2>
+                            <p style="font-size: 18px; line-height: 1.5; color: #F0F4F8;">A thriving DeFi hub home to pioneers like Aave and Membrane Finance, fostering rapid collaboration.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="footer-title">Ready to ship code, qubits, and alpha.<br>Not stories.</p>
-            <div class="footer-links">
-                <a href="qynetic-whitepaper-v1.3.pdf" download>Whitepaper</a>
-                <a href="mailto:hello@qynetic.com">Contact</a>
+        <!-- DIA 7: Product Evolution -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="display: flex; flex-direction: column; width: 100%; max-width: 1280px;">
+                <div style="padding-top: 60px; padding-left: 80px; margin-bottom: 40px;">
+                    <h1 style="font-size: 48px; color: #4A90E2; line-height: 1.2;">
+                        Product Evolution: From Oracle to Settlement Layer
+                    </h1>
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between; padding-left: 80px; padding-right: 80px;">
+                    <div style="width: 65%; display: flex; flex-direction: column; gap: 30px;">
+                        <div style="border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 20px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <span style="font-size: 18px; color: #BCCCDC; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-right: 20px;">Phase 1</span>
+                                <span style="font-size: 28px; color: #4A90E2; font-weight: 700;">Qynetic Oracle (2027)</span>
+                            </div>
+                            <p style="font-size: 18px; line-height: 1.6; color: #F0F4F8;">
+                                First commercial quantum-accelerated oracle. Features <span style="color: #BCCCDC; font-weight: 700;">real-time portfolio optimization</span> and quantum-inspired Monte-Carlo risk testing on current hardware.
+                            </p>
+                        </div>
+                        <div style="border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 20px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <span style="font-size: 18px; color: #BCCCDC; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-right: 20px;">Phase 2</span>
+                                <span style="font-size: 28px; color: #4A90E2; font-weight: 700;">Qynetic VM (2029+)</span>
+                            </div>
+                            <p style="font-size: 18px; line-height: 1.6; color: #F0F4F8;">
+                                A specialized Virtual Machine that <span style="color: #BCCCDC; font-weight: 700;">offloads hard subroutines</span> to quantum co-processors as hardware matures, enabling complex financial logic execution.
+                            </p>
+                        </div>
+                        <div style="border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 20px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <span style="font-size: 18px; color: #BCCCDC; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-right: 20px;">Phase 3</span>
+                                <span style="font-size: 28px; color: #4A90E2; font-weight: 700;">Qynetic Layer (2030+)</span>
+                            </div>
+                            <p style="font-size: 18px; line-height: 1.6; color: #F0F4F8;">
+                                Long-term vision for an L2/L3 settlement layer featuring <span style="color: #BCCCDC; font-weight: 700;">Proof-of-Useful-Quantum-Work</span>, providing a decentralized foundation for quantum finance.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="width: 30%; display: flex; justify-content: center; align-items: flex-start; padding-top: 20px;">
+                        <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888439722_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzLzFiYldySmFYME9SYg.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg0Mzk3MjJfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMekZpWWxkeVNtRllNRTlTWWcuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXSzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=vOfHN-pJmThGzV9S-gbqJHE7nfjtvIT7RBvUyy7Qc1lpxRNZEW1~Mzfwlkqpkjh1-bl4ORbgxM~L5dZUFl1rPXapP5zA55Dqe172Lqqj284sYbxsdNayS0IpRySTTp9396xi-z3sw3psqhNbQK8-OjtrlXJ6MtZ574jHQqVXGMtUoOxKpmOiYw93LsPheTYpMaL-I19TpQ3blVA3m2~VucCLqluZ2G-~w7ZmVVXkOwuBf0bxVqjL2nBtmn40MbkNJKSplhXe4bxxvXDMn7EKjHnVqITfVnDji9einasMvPB7m2foi9rN~bAmIiCGtt2GiabVdTXPO9tdE~cX51ZzgQ__" 
+                             alt="Quantum Hardware Components" 
+                             style="width: 350px; height: 450px; object-fit: contain; border: 1px solid rgba(188, 204, 220, 0.1);">
+                    </div>
+                </div>
             </div>
-            <p class="small">© 2025 Qynetic Labs Oy • Helsinki, Finland</p>
-        </div>
-    </footer>
+        </section>
+
+        <!-- DIA 8: Future-Proof Technology Stack -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="padding-top: 60px; width: 100%; max-width: 1280px;">
+                <div style="width: 1120px; margin-left: auto; margin-right: auto;">
+                    <h1 style="font-size: 48px; color: #4A90E2; margin-bottom: 20px; font-weight: 700; text-align: center;">
+                        Future-Proof Technology Stack (2025–2032)
+                    </h1>
+                    <h2 style="font-size: 24px; color: #BCCCDC; margin-bottom: 50px; font-weight: 400; text-align: center;">
+                        Transitioning from NIST PQC to decentralized quantum backends.
+                    </h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left; font-size: 24px; color: #4A90E2; padding-top: 20px; padding-bottom: 20px; border-bottom: 2px solid rgba(74, 144, 226, 0.3);">Component</th>
+                                <th style="text-align: left; font-size: 24px; color: #4A90E2; padding-top: 20px; padding-bottom: 20px; border-bottom: 2px solid rgba(74, 144, 226, 0.3);">2025–2028 (Pilot)</th>
+                                <th style="text-align: left; font-size: 24px; color: #4A90E2; padding-top: 20px; padding-bottom: 20px; border-bottom: 2px solid rgba(74, 144, 226, 0.3);">2029+ (Scale)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1); font-weight: 700; color: #BCCCDC;">Cryptography</td>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1);">NIST PQC (ML-KEM, Dilithium)</td>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1);">Next-gen lattice schemes</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1); font-weight: 700; color: #BCCCDC;">Quantum Backends</td>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1);">IBM, Google, AWS Braket</td>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1);">Decentralized providers</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1); font-weight: 700; color: #BCCCDC;">Classical Stack</td>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1);">Rust + Cosmos SDK</td>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1);">Fully on-chain scheduler</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1); font-weight: 700; color: #BCCCDC;">Consensus</td>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1);">Tendermint BFT</td>
+                                <td style="padding-top: 25px; padding-bottom: 25px; font-size: 20px; border-bottom: 1px solid rgba(188, 204, 220, 0.1);">Proof-of-Useful-Quantum-Work</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIA 9: $QYN Token -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="padding-top: 80px; width: 100%; max-width: 1280px;">
+                <div style="text-align: center; margin-bottom: 80px; padding-left: 80px; padding-right: 80px;">
+                    <h1 style="font-size: 48px; color: #4A90E2; margin-bottom: 20px; font-weight: 700;">
+                        $QYN Token: Powering the Quantum Economy
+                    </h1>
+                    <p style="font-size: 24px; color: #BCCCDC; font-weight: 400;">
+                        A fixed-supply utility token designed for the pay-per-qubit-second era.
+                    </p>
+                </div>
+                <div style="display: flex; justify-content: space-evenly; padding-left: 40px; padding-right: 40px;">
+                    <div style="width: 28%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.2); padding-top: 40px;">
+                        <div style="font-size: 56px; color: #4A90E2; margin-bottom: 32px;"><i class="fas fa-bolt"></i></div>
+                        <h2 style="font-size: 28px; color: #BCCCDC; margin-bottom: 24px; font-weight: 700;">Utility</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #F0F4F8;">
+                            Primary medium for accessing <span style="color: #4A90E2; font-weight: 700;">quantum-accelerated oracle services</span> and executing complex subroutines on the Qynetic VM.
+                        </p>
+                    </div>
+                    <div style="width: 28%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.2); padding-top: 40px;">
+                        <div style="font-size: 56px; color: #4A90E2; margin-bottom: 32px;"><i class="fas fa-lock"></i></div>
+                        <h2 style="font-size: 28px; color: #BCCCDC; margin-bottom: 24px; font-weight: 700;">Supply</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #F0F4F8;">
+                            A <span style="color: #4A90E2; font-weight: 700;">fixed supply model</span> ensures long-term predictability and aligns value with the growth of the quantum infrastructure ecosystem.
+                        </p>
+                    </div>
+                    <div style="width: 28%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.2); padding-top: 40px;">
+                        <div style="font-size: 56px; color: #4A90E2; margin-bottom: 32px;"><i class="fas fa-check-circle"></i></div>
+                        <h2 style="font-size: 28px; color: #BCCCDC; margin-bottom: 24px; font-weight: 700;">Realism</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #F0F4F8;">
+                            Utility becomes increasingly tangible as <span style="color: #4A90E2; font-weight: 700;">commercial quantum access</span> grows, moving from experimental pilots to mainstream financial use.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIA 10: Strategic Roadmap -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="padding-top: 60px; width: 100%; max-width: 1280px;">
+                <div style="width: 1120px; margin-left: auto; margin-right: auto;">
+                    <h1 style="font-size: 48px; color: #4A90E2; margin-bottom: 60px; font-weight: 700; text-align: center;">
+                        Strategic Roadmap: Delivering Real Value (2025–2030+)
+                    </h1>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; row-gap: 16px; max-width: 1000px; margin: 0 auto; position: relative;">
+                        <div style="content: ''; position: absolute; width: 2px; background-color: rgba(74, 144, 226, 0.12); top: 0; bottom: 0; left: 50%; transform: translateX(-50%); pointer-events: none;"></div>
+                        <div style="padding-top: 6px; padding-bottom: 8px; position: relative; justify-self: end; text-align: right; padding-right: 24px;">
+                            <div style="content: ''; position: absolute; width: 12px; height: 12px; background-color: #4A90E2; top: 14px; z-index: 1; border-radius: 50%; right: -6px;"></div>
+                            <div style="font-size: 24px; font-weight: 700; color: #4A90E2; margin-bottom: 6px;">2025</div>
+                            <div style="font-size: 22px; font-weight: 700; color: #BCCCDC; margin-bottom: 6px;">Foundation</div>
+                            <div style="font-size: 18px; line-height: 1.4; color: #F0F4F8;">Qynetic Labs Oy incorporation in Helsinki, Finland.</div>
+                        </div>
+                        <div style="padding-top: 6px; padding-bottom: 8px; position: relative; justify-self: start; text-align: left; padding-left: 24px;">
+                            <div style="content: ''; position: absolute; width: 12px; height: 12px; background-color: #4A90E2; top: 14px; z-index: 1; border-radius: 50%; left: -6px;"></div>
+                            <div style="font-size: 24px; font-weight: 700; color: #4A90E2; margin-bottom: 6px;">2026–2027</div>
+                            <div style="font-size: 22px; font-weight: 700; color: #BCCCDC; margin-bottom: 6px;">Private Alpha (PoC)</div>
+                            <div style="font-size: 18px; line-height: 1.4; color: #F0F4F8;">Quantum-inspired oracle pilots for hedge funds and institutional partners.</div>
+                        </div>
+                        <div style="padding-top: 6px; padding-bottom: 8px; position: relative; justify-self: end; text-align: right; padding-right: 24px;">
+                            <div style="content: ''; position: absolute; width: 12px; height: 12px; background-color: #4A90E2; top: 14px; z-index: 1; border-radius: 50%; right: -6px;"></div>
+                            <div style="font-size: 24px; font-weight: 700; color: #4A90E2; margin-bottom: 6px;">2027–2028</div>
+                            <div style="font-size: 22px; font-weight: 700; color: #BCCCDC; margin-bottom: 6px;">Public Testnet & TGE</div>
+                            <div style="font-size: 18px; line-height: 1.4; color: #F0F4F8;">Developer access, documentation release, and $QYN Token Generation Event.</div>
+                        </div>
+                        <div style="padding-top: 6px; padding-bottom: 8px; position: relative; justify-self: start; text-align: left; padding-left: 24px;">
+                            <div style="content: ''; position: absolute; width: 12px; height: 12px; background-color: #4A90E2; top: 14px; z-index: 1; border-radius: 50%; left: -6px;"></div>
+                            <div style="font-size: 24px; font-weight: 700; color: #4A90E2; margin-bottom: 6px;">2029+</div>
+                            <div style="font-size: 22px; font-weight: 700; color: #BCCCDC; margin-bottom: 6px;">Qynetic VM Beta</div>
+                            <div style="font-size: 18px; line-height: 1.4; color: #F0F4F8;">Transition to the 1,000+ logical qubit era with quantum subroutines.</div>
+                        </div>
+                        <div style="padding-top: 6px; padding-bottom: 8px; position: relative; justify-self: end; text-align: right; padding-right: 24px;">
+                            <div style="content: ''; position: absolute; width: 12px; height: 12px; background-color: #4A90E2; top: 14px; z-index: 1; border-radius: 50%; right: -6px;"></div>
+                            <div style="font-size: 24px; font-weight: 700; color: #4A90E2; margin-bottom: 6px;">2030+</div>
+                            <div style="font-size: 22px; font-weight: 700; color: #BCCCDC; margin-bottom: 6px;">Qynetic Layer Launch</div>
+                            <div style="font-size: 18px; line-height: 1.4; color: #F0F4F8;">Full deployment of the decentralized quantum settlement layer.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIA 11: Realism Over Hype -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="display: flex; flex-direction: column; align-items: center; padding-top: 100px; width: 100%; max-width: 1280px;">
+                <div style="text-align: center; max-width: 1000px; margin-bottom: 80px;">
+                    <h1 style="font-size: 48px; color: #4A90E2; margin-bottom: 24px; line-height: 1.2;">
+                        Realism Over Hype: The Qynetic Commitment
+                    </h1>
+                    <p style="font-size: 28px; color: #BCCCDC; font-weight: 400;">
+                        Building the "Chainlink + Bloomberg Terminal" of the quantum era.
+                    </p>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 1100px; padding-top: 40px;">
+                    <div style="width: 30%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 40px;">
+                        <div style="font-size: 48px; color: #4A90E2; margin-bottom: 24px;"><i class="fas fa-tools"></i></div>
+                        <h2 style="font-size: 24px; color: #F0F4F8; margin-bottom: 16px; font-weight: 700;">Infrastructure Focus</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #BCCCDC;">
+                            We avoid "meme coin" hype in favor of building <span style="color: #4A90E2; font-weight: 700;">essential, neutral infrastructure</span> that serious players will use and pay for.
+                        </p>
+                    </div>
+                    <div style="width: 30%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 40px;">
+                        <div style="font-size: 48px; color: #4A90E2; margin-bottom: 24px;"><i class="fas fa-user-tie"></i></div>
+                        <h2 style="font-size: 24px; color: #F0F4F8; margin-bottom: 16px; font-weight: 700;">Serious Utility</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #BCCCDC;">
+                            Our tools are designed for <span style="color: #4A90E2; font-weight: 700;">institutional financial players</span> who require precision, security, and verifiable results.
+                        </p>
+                    </div>
+                    <div style="width: 30%; text-align: center; border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 40px;">
+                        <div style="font-size: 48px; color: #4A90E2; margin-bottom: 24px;"><i class="fas fa-shipping-fast"></i></div>
+                        <h2 style="font-size: 24px; color: #F0F4F8; margin-bottom: 16px; font-weight: 700;">Step-by-Step Delivery</h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: #BCCCDC;">
+                            We ship <span style="color: #4A90E2; font-weight: 700;">code, prototypes, and incremental alpha</span> rather than empty promises or speculative roadmaps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIA 12: Closing Slide -->
+        <section class="slide" style="background: #0B1026; color: #F0F4F8;">
+            <div style="display: flex; flex-direction: row; align-items: stretch; width: 100%; max-width: 1280px; height: 100%;">
+                <div style="width: 50%; display: flex; justify-content: center; align-items: center; background: rgba(74, 144, 226, 0.05);">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/ZNwopVJKaDMHLYABrQ7zW9/sandbox/slides_resource_ibd0c24iajb2uyjhmcfex-54ad0b5d-e2b-prod-us2_1766888507349_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC9zZWFyY2hfaW1hZ2VzL1pvZFd6a0JlcE85Tg.jpg?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWk53b3BWSkthRE1ITFlBQnJRN3pXOS9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9pYmQwYzI0aWFqYjJ1eWpobWNmZXgtNTRhZDBiNWQtZTJiLXByb2QtdXMyXzE3NjY4ODg1MDczNDlfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5elpXRnlZMmhmYVcxaFoyVnpMMXB2WkZkNmEwSmxjRTg1VGcuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXSzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=rU3cx3oUyHcJsu0ELg8g1B5xN7hLJrcF6dyuahg~sVXxP0H~Kk~RH9jwYD9NXUhKmpywb5z0p9adnnPg2F9z35xDIe~qY2dJRidh6AbCxLJrbtEtGusbbmvFhWiqrdRBVZbx4F3bNx3VZQmv1SsV9mCe-GpdbZcAeoz6MpcNNNQthVP4jZLR1N6JRpkKH7b3jJbY29j5bIO6oedWEYx53PYEeZDG1ehf9TJiPBvuUGPCUO36X2kniyA1dOFXvXoQKHhHz1006FXiujGqA7L8EhjljU2mhRcAifHf6lnfW8YqI5N6d8YRSQba6p3x37qJlnE9~Ei8jGNDPQ095B3lvg__" 
+                         alt="Helsinki Cityscape" 
+                         style="width: 640px; height: 720px; object-fit: cover;">
+                </div>
+                <div style="width: 50%; padding-top: 120px; padding-left: 80px; padding-right: 80px; display: flex; flex-direction: column;">
+                    <h1 style="font-size: 48px; color: #4A90E2; margin-bottom: 40px; line-height: 1.2;">
+                        Qynetic Labs Oy: Shaping the Future from Helsinki
+                    </h1>
+                    <p style="font-size: 24px; line-height: 1.6; color: #F0F4F8; margin-bottom: 60px;">
+                        Ready to ship code, prototypes, and incremental alpha. We are building the <span style="color: #4A90E2; font-weight: 700;">foundational layer</span> for quantum-augmented finance.
+                    </p>
+                    <div style="border-top: 1px solid rgba(188, 204, 220, 0.3); padding-top: 40px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px; font-size: 20px; color: #BCCCDC;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 15px; color: #4A90E2; width: 24px; text-align: center;"></i>
+                            <span>Helsinki, Finland</span>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 20px; font-size: 20px; color: #BCCCDC;">
+                            <i class="fas fa-calendar-alt" style="margin-right: 15px; color: #4A90E2; width: 24px; text-align: center;"></i>
+                            <span>Incorporated December 2025</span>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 20px; font-size: 20px; color: #BCCCDC;">
+                            <i class="fas fa-globe" style="margin-right: 15px; color: #4A90E2; width: 24px; text-align: center;"></i>
+                            <span>qynetic.io</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="nav-arrow prev" id="prev">‹</div>
+    <div class="nav-arrow next" id="next">›</div>
+
+    <div class="dots" id="dots"></div>
+
+    <script>
+        const container = document.getElementById('slidesContainer');
+        const slides = container.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+        const dotsContainer = document.getElementById('dots');
+
+        let currentSlide = 0;
+
+        function updateSlide() {
+            container.style.transform = `translateX(-${currentSlide * 100}vw)`;
+            
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === currentSlide) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            });
+
+            prevBtn.style.display = currentSlide === 0 ? 'none' : 'block';
+            nextBtn.style.display = currentSlide === slides.length - 1 ? 'none' : 'block';
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            updateSlide();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        let isScrolling = false;
+        window.addEventListener('wheel', e => {
+            if (isScrolling) return;
+            isScrolling = true;
+            setTimeout(() => isScrolling = false, 800);
+
+            if (e.deltaY > 0) nextSlide();
+            else prevSlide();
+        });
+
+        let touchStartX = 0;
+        container.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+        container.addEventListener('touchend', e => {
+            const touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) nextSlide();
+            if (touchEndX - touchStartX > 50) prevSlide();
+        });
+
+        updateSlide();
+    </script>
 </body>
 </html>
